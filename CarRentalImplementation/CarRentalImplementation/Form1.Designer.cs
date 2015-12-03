@@ -30,11 +30,11 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonChooseCar = new System.Windows.Forms.Button();
             this.textBoxDatoStart = new System.Windows.Forms.TextBox();
             this.textBoxDatoSlut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -54,14 +54,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(42, 112);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(346, 199);
-            this.listBox1.TabIndex = 2;
             // 
             // buttonChooseCar
             // 
@@ -96,6 +88,14 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Loan Duration";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(42, 112);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(346, 199);
+            this.listBox1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,11 +119,11 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button buttonChooseCar;
         private System.Windows.Forms.TextBox textBoxDatoStart;
         private System.Windows.Forms.TextBox textBoxDatoSlut;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

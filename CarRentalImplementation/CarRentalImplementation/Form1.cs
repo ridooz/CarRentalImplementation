@@ -17,13 +17,19 @@ namespace CarRentalImplementation
         private Controller controller;
         private List<RentalCar> availableCars;
         private string[] cities;
-        private string drivername;
+        private string selected;
 
-        public string Drivername
+        public string Selected
         {
-            get { return drivername; }
-            set { drivername = value; }
+            get { return selected; }
+            set { selected = value; }
         }
+
+        public Form1(string selected)
+        {
+            this.selected = Selected;
+        }
+        
 
         public Form1()
         {
@@ -49,6 +55,7 @@ namespace CarRentalImplementation
 
         private void buttonChooseCar_Click(object sender, EventArgs e)
         {
+            selected = listBox1.SelectedItem.ToString();
             if(listBox1.SelectedItem != null && textBoxDatoStart != null && textBoxDatoSlut != null)
             {
                 Confirmation conform = new Confirmation();

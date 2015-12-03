@@ -12,16 +12,24 @@ namespace CarRentalImplementation
 {
     public partial class Result : Form
     {
-        private string drivername;
+        
+        
+ 
         public Result()
         {          
             InitializeComponent();
-            Form1 form1 = new Form1();
+            //Form1 form1 = new Form1();
             //drivername = form1.Drivername;
             //labelDriverName.Text = drivername.ToString();
-
-            
-
+            //drivername = this.labelDriverName;
+            //rent.Drivername = drivername.ToString();
+            // labelDriverName.Text = drivername.ToString();
+            //drivername = rent.Drivername;
+            //labelDriverName.Text = drivername.ToString();
+            //rent.Drivername.Text = drivername.ToString();
+         
         }
+
+        
     }
 }
