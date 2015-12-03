@@ -17,6 +17,13 @@ namespace CarRentalImplementation
         private Controller controller;
         private List<RentalCar> availableCars;
         private string[] cities;
+        private string drivername;
+
+        public string Drivername
+        {
+            get { return drivername; }
+            set { drivername = value; }
+        }
 
         public Form1()
         {
@@ -27,6 +34,7 @@ namespace CarRentalImplementation
             comboBox1.DataSource = cities;            
             comboBox1.SelectedIndex = 0;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,12 +49,20 @@ namespace CarRentalImplementation
 
         private void buttonChooseCar_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedItem != null)
+            if(listBox1.SelectedItem != null && textBoxDatoStart != null && textBoxDatoSlut != null)
             {
                 Confirmation conform = new Confirmation();
                 conform.Show();
             }
+            else
+            {
+                MessageBox.Show("Du skal vælge bil + indtaste start- og slutdato");
+            }
         }
+        //public void Fjern()
+        //{
+        //    listBox1.Items.Remove(listBox1.SelectedItem);
+        //}
 
 
     }

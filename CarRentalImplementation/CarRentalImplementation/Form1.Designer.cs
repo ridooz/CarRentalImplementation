@@ -32,6 +32,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonChooseCar = new System.Windows.Forms.Button();
+            this.textBoxDatoStart = new System.Windows.Forms.TextBox();
+            this.textBoxDatoSlut = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -55,9 +58,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(42, 84);
+            this.listBox1.Location = new System.Drawing.Point(42, 112);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(346, 238);
+            this.listBox1.Size = new System.Drawing.Size(346, 199);
             this.listBox1.TabIndex = 2;
             // 
             // buttonChooseCar
@@ -70,11 +73,37 @@
             this.buttonChooseCar.UseVisualStyleBackColor = true;
             this.buttonChooseCar.Click += new System.EventHandler(this.buttonChooseCar_Click);
             // 
+            // textBoxDatoStart
+            // 
+            this.textBoxDatoStart.Location = new System.Drawing.Point(139, 77);
+            this.textBoxDatoStart.Name = "textBoxDatoStart";
+            this.textBoxDatoStart.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDatoStart.TabIndex = 4;
+            // 
+            // textBoxDatoSlut
+            // 
+            this.textBoxDatoSlut.Location = new System.Drawing.Point(288, 77);
+            this.textBoxDatoSlut.Name = "textBoxDatoSlut";
+            this.textBoxDatoSlut.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDatoSlut.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Loan Duration";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 375);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxDatoSlut);
+            this.Controls.Add(this.textBoxDatoStart);
             this.Controls.Add(this.buttonChooseCar);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
@@ -82,6 +111,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,6 +121,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button buttonChooseCar;
+        private System.Windows.Forms.TextBox textBoxDatoStart;
+        private System.Windows.Forms.TextBox textBoxDatoSlut;
+        private System.Windows.Forms.Label label1;
     }
 }
 
