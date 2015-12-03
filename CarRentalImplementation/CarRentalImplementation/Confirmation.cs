@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaradayCarRental.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace CarRentalImplementation
 {
     public partial class Confirmation : Form
     {
-        public Confirmation()
+        RentalCar car;
+        DateTime dateStart;
+        DateTime dateSlut;
+
+        public Confirmation(RentalCar car, DateTime dateStart, DateTime dateSlut)
         {
             InitializeComponent();
+            this.car = car;
+            this.dateStart = dateStart;
+            this.dateSlut = dateSlut;
         }
 
         private void buttonNej_Click(object sender, EventArgs e)
@@ -24,7 +32,7 @@ namespace CarRentalImplementation
 
         private void buttonJa_Click(object sender, EventArgs e)
         {
-            Rent rentform = new Rent();
+            Rent rentform = new Rent(car, dateStart, dateSlut);
             rentform.Show();
             this.Close();
         }

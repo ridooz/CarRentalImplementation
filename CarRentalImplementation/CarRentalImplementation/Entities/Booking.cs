@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FaradayCarRental.Entities
 {
-    class Booking
+    public class Booking
     {
+        public Driver driver { get; set; }
+        public RentalCar car { get; set; }
         public PickUpStation PickUpPlace { get; set; }
         public DateTime TimeOfPickUp { get; set; }
         public PickUpStation DeliveryPlace { get; set; }

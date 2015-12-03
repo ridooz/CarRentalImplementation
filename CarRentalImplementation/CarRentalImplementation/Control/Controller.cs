@@ -21,5 +21,12 @@ namespace FaradayCarRental.Control
         {
             return dummyBackend.ShowAvailableCars(city);
         }
+
+        public Booking MakeABooking(Booking booking)
+        {
+            return dummyBackend.MakeABooking(booking);
+        }
+
+
     }
 }

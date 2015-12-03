@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FaradayCarRental.Entities
 {
-    class RentalCar
+    public class RentalCar
     {
         public Type Type { get; set; }
         public string LicensePlate { get; set; }
@@ -16,6 +16,11 @@ namespace FaradayCarRental.Entities
         public RentalCar()
         {
 
+        }
+
+        public override string ToString()
+        {
+            return "LicencePlate: " + LicensePlate + ", type: " + Type.TypeName + ", current location: " + CurrentLocation.City;
         }
     }
 }

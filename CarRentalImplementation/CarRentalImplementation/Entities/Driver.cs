@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FaradayCarRental.Entities
 {
-    class Driver
+    public class Driver
     {
         public string DriverLicenceNumber { get; set; }
         public string PassportName { get; set; }

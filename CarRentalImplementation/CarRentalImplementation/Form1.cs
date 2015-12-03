@@ -46,10 +46,13 @@ namespace CarRentalImplementation
         {
             availableCars = controller.ShowAvailableCars(comboBox1.SelectedValue as string);
 
+            listBox1.DisplayMember = "ToString";
+            listBox1.ValueMember = "LicensePlate";
+
             listBox1.Items.Clear();
             foreach (RentalCar car in availableCars)
             {
-                listBox1.Items.Add("LicencePlate: " + car.LicensePlate + ", type: " + car.Type.TypeName + ", current location: " + car.CurrentLocation.City + "\n");
+                listBox1.Items.Add(car);
             }
         }
 
@@ -58,7 +61,13 @@ namespace CarRentalImplementation
             selected = listBox1.SelectedItem.ToString();
             if(listBox1.SelectedItem != null && textBoxDatoStart != null && textBoxDatoSlut != null)
             {
-                Confirmation conform = new Confirmation();
+
+                RentalCar car = listBox1.SelectedItem as RentalCar;
+
+                DateTime dateStart = Convert.ToDateTime(textBoxDatoStart.Text);
+                DateTime dateSlut = Convert.ToDateTime(textBoxDatoSlut.Text);
+                
+                Confirmation conform = new Confirmation(car, dateStart, dateSlut);
                 conform.Show();
             }
             else
@@ -66,10 +75,6 @@ namespace CarRentalImplementation
                 MessageBox.Show("Du skal vælge bil + indtaste start- og slutdato");
             }
         }
-        //public void Fjern()
-        //{
-        //    listBox1.Items.Remove(listBox1.SelectedItem);
-        //}
 
 
     }

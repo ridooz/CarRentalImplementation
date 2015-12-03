@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FaradayCarRental.Entities
 {
-    abstract class PickUpStation
+    public abstract class PickUpStation
     {
         public string City { get; set; }
+
     }
 }

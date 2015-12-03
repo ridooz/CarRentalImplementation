@@ -100,7 +100,8 @@ namespace FaradayCarRental.Data
 
         public override Booking MakeABooking(Booking booking)
         {
-            throw new NotImplementedException();
+            rentalCars.Remove(booking.car);
+            return booking;
         }
 
         public override Booking SeeABooking(Driver driver)

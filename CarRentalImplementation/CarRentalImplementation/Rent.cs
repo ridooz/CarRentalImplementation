@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FaradayCarRental.Control;
+using FaradayCarRental.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +16,15 @@ namespace CarRentalImplementation
     public partial class Rent : Form
     {
 
-        
-        public Rent()
+        RentalCar car;
+        DateTime dateStart;
+        DateTime dateSlut;
+
+        public Rent(RentalCar car, DateTime dateStart, DateTime dateSlut)
         {
-            
+            this.car = car;
+            this.dateSlut = dateSlut;
+            this.dateStart = dateStart;
             InitializeComponent();
         }
         
@@ -26,22 +33,56 @@ namespace CarRentalImplementation
             
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                //this.listbox.Items.Remove(listbox.SelectedItem);         
-                //MessageBox.Show("Bilen er blevet udlejet til " + textBox2.Text);
-                // ff.Fjern();
+                if (Convert.ToInt32(textBox3.Text) >= 18)
+                {
 
-                //Result form = new Result();
-                //form.Show();
-                
-                //this.Close();
+                    Driver driver = new Driver();
+                    driver.DriverLicenceNumber = textBox1.Text;
+                    driver.PassportName = textBox2.Text;
+                    driver.age = Convert.ToInt32(textBox3.Text);
 
-                Form1 form = new Form1();
-                
-                textBox3.Text = "Driver name: " + textBox2.Text + System.Environment.NewLine
-                + "DriverLicense: " + textBox1.Text + System.Environment.NewLine
-                + form.Selected;
+
+                    Booking booking = new Booking();
+                    booking.car = car;
+                    booking.driver = driver;
+                    booking.TimeOfDelivery = dateStart;
+                    booking.TimeOfPickUp = dateSlut;
+
+
+                    if (checkBox1.Checked)
+                    {
+                        string newDeliverLocation = textBox4.Text;
+                        booking.car.CurrentLocation.City = newDeliverLocation;
+                        booking.PickUpPlace = car.CurrentLocation;
+                        booking.ExtraFee = 100;
+                    }
+                    else
+                    {
+                        booking.PickUpPlace = car.CurrentLocation;
+                    }
+
+                    Controller c = new Controller();
+                    Booking justBooked = c.MakeABooking(booking);
+
+                    ResultForm resultForm = new ResultForm(justBooked);
+                    resultForm.Show();
+                }
+                else
+                {
+                    // age exception
+                }
                 
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }        
     }
 }
