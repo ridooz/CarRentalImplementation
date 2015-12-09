@@ -11,11 +11,10 @@ using System.Windows.Forms;
 
 namespace CarRentalImplementation
 {
-    public partial class ResultForm : Form
+    public partial class ResultForm2 : Form
     {
-
         Booking booking;
-        public ResultForm(Booking booking)
+        public ResultForm2(Booking booking)
         {
             this.booking = booking;
             InitializeComponent();

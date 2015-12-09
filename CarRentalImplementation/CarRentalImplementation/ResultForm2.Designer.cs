@@ -1,6 +1,6 @@
 ﻿namespace CarRentalImplementation
 {
-    partial class ResultForm
+    partial class ResultForm2
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 229);
+            this.label1.Location = new System.Drawing.Point(316, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // ResultForm
+            // ResultForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 565);
+            this.ClientSize = new System.Drawing.Size(714, 509);
             this.Controls.Add(this.label1);
-            this.Name = "ResultForm";
-            this.Text = "ResultForm";
+            this.Name = "ResultForm2";
+            this.Text = "ResultForm2";
             this.ResumeLayout(false);
             this.PerformLayout();
 

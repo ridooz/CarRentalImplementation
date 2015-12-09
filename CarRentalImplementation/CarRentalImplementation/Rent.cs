@@ -64,7 +64,7 @@ namespace CarRentalImplementation
                     Controller c = new Controller();
                     Booking justBooked = c.MakeABooking(booking);
 
-                    ResultForm resultForm = new ResultForm(justBooked);
+                    ResultForm2 resultForm = new ResultForm2(justBooked);
                     resultForm.Show();
                 }
                 else
