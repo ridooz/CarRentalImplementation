@@ -19,7 +19,7 @@ namespace CarRentalImplementation
             this.booking = booking;
             InitializeComponent();
 
-            label1.Text = "Du har netop booket bilen: " + booking.car.LicensePlate + " med start og slut: " + booking.TimeOfPickUp + "-" + booking.TimeOfDelivery + ". Ekstra omkostninger for eventuel ændring af pickup destination: " + booking.ExtraFee;
+            label1.Text = "Du har netop booket bilen: " + booking.car.LicensePlate + " med start og slut: " + booking.TimeOfPickUp + "-" + booking.TimeOfDelivery + ". Ekstra omkostninger for eventuel ændring af pickup destination: " + booking.ExtraFee + " til " + booking.car.CurrentLocation.City;
         }
     }
 }

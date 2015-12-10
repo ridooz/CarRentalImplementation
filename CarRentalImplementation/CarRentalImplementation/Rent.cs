@@ -19,6 +19,7 @@ namespace CarRentalImplementation
         RentalCar car;
         DateTime dateStart;
         DateTime dateSlut;
+        private string[] pickUpPlacesCities;
 
         public Rent(RentalCar car, DateTime dateStart, DateTime dateSlut)
         {
@@ -26,6 +27,10 @@ namespace CarRentalImplementation
             this.dateSlut = dateSlut;
             this.dateStart = dateStart;
             InitializeComponent();
+            pickUpPlacesCities = new string[] { "Lyngby", "Kastrup", "København", "Slagelse", "Næstved", "Odense", "Århus" };
+
+            comboBox1.DataSource = pickUpPlacesCities;
+            comboBox1.SelectedIndex = 0;
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +38,7 @@ namespace CarRentalImplementation
             
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                if (Convert.ToInt32(textBox3.Text) >= 18)
+                if (Convert.ToInt32(textBox3.Text) >= 25)
                 {
 
                     Driver driver = new Driver();
@@ -51,9 +56,10 @@ namespace CarRentalImplementation
 
                     if (checkBox1.Checked)
                     {
-                        string newDeliverLocation = textBox4.Text;
+                        string newDeliverLocation = comboBox1.SelectedItem.ToString();
                         booking.car.CurrentLocation.City = newDeliverLocation;
                         booking.PickUpPlace = car.CurrentLocation;
+                        
                         booking.ExtraFee = 100;
                     }
                     else
